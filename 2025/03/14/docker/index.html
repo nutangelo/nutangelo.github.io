@@ -1,0 +1,722 @@
+<!DOCTYPE html>
+<html lang="en" color-mode="light">
+
+  <head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="author" content="Newtown" />
+  <!-- Open Graph Description 简短摘要-->
+  
+  <!-- 用于搜索引擎的文章摘要 -->
+  
+  
+  
+  <title>
+    
+      docker 
+      
+      
+      |
+    
+     Nutangelo
+  </title>
+
+  
+    <link rel="apple-touch-icon" href="/images/favicon.png">
+    <link rel="icon" href="/images/favicon.png">
+  
+
+  <!-- Raleway-Font -->
+  <link href="https://fonts.googleapis.com/css?family=Raleway&display=swap" rel="stylesheet">
+
+  <!-- hexo site css -->
+  <link rel="stylesheet" href="/css/main.css" />
+  <link rel="stylesheet" href="//at.alicdn.com/t/font_1886449_67xjft27j1l.css" />
+  <!-- 代码块风格 -->
+  
+
+  <!-- jquery3.3.1 -->
+  
+    <script defer type="text/javascript" src="/plugins/jquery.min.js"></script>
+  
+
+  <!-- fancybox -->
+  
+    <link href="/plugins/jquery.fancybox.min.css" rel="stylesheet">
+    <script defer type="text/javascript" src="/plugins/jquery.fancybox.min.js"></script>
+  
+  
+<script src="/js/fancybox.js"></script>
+
+
+  
+
+  
+
+  <script>
+    var html = document.documentElement
+    const colorMode = localStorage.getItem('color-mode')
+    if (colorMode) {
+      document.documentElement.setAttribute('color-mode', colorMode)
+    }
+  </script>
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+
+  <body>
+    <div id="app">
+      <div class="header">
+  <div class="avatar">
+    <a href="/">
+      <!-- 头像取消懒加载，添加no-lazy -->
+      
+        <img src="/images/momo.jpg" alt="">
+      
+    </a>
+    <div class="nickname"><a href="/">牛唐</a></div>
+  </div>
+  <div class="navbar">
+    <ul>
+      
+        <li class="nav-item" data-path="/">
+          <a href="/">Home</a>
+        </li>
+      
+        <li class="nav-item" data-path="/archives/">
+          <a href="/archives/">Archives</a>
+        </li>
+      
+        <li class="nav-item" data-path="/friends/">
+          <a href="/friends/">Friends</a>
+        </li>
+      
+        <li class="nav-item" data-path="/about/">
+          <a href="/about/">About</a>
+        </li>
+      
+    </ul>
+  </div>
+</div>
+
+
+<script src="/js/activeNav.js"></script>
+
+
+
+      <div class="flex-container">
+        <!-- 文章详情页，展示文章具体内容，url形式：https://yoursite/文章标题/ -->
+<!-- 同时为「标签tag」，「朋友friend」，「分类categories」，「关于about」页面的承载页面，具体展示取决于page.type -->
+
+
+  <!-- LaTex Display -->
+
+  
+    <script async type="text/javascript" src="/plugins/mathjax/tex-chtml.js"></script>
+  
+  <script>
+    MathJax = {
+      tex: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']]
+      }
+    }
+  </script>
+
+
+
+
+
+  <!-- clipboard -->
+
+  
+    <script async type="text/javascript" src="/plugins/clipboard.min.js"></script>
+  
+  
+<script src="/js/codeCopy.js"></script>
+
+
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  <!-- 文章内容页 url形式：https://yoursite/文章标题/ -->
+  <div class="container post-details" id="post-details">
+    <div class="post-content">
+      <div class="post-title">docker</div>
+      <div class="post-attach">
+        <span class="post-pubtime">
+          <i class="iconfont icon-updatetime mr-10" title="Update time"></i>
+          2025-03-14 22:25:51
+        </span>
+        
+      </div>
+      <div class="markdown-body">
+        <h1 id="Docker学习"><a href="#Docker学习" class="headerlink" title="Docker学习"></a>Docker学习</h1><p>Docker 命令集合：<a target="_blank" rel="noopener" href="https://b11et3un53m.feishu.cn/wiki/Rfocw7ctXij2RBkShcucLZbrn2d">‌⁠‬⁠‌﻿‌⁠‌‬‬‌‍‬‌⁠⁠﻿﻿﻿‌‍‬⁠⁠‌﻿安装Docker - 飞书云文档</a></p>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/u013250861/article/details/139903635?fromshare=blogdetail&sharetype=blogdetail&sharerId=139903635&sharerefer=PC&sharesource=nutangelo&sharefrom=from_link">csdn 将docker添加到用户组</a></p>
+<h2 id="Ubuntu22-安装"><a href="#Ubuntu22-安装" class="headerlink" title="Ubuntu22 安装"></a>Ubuntu22 安装</h2><p>参考：<a target="_blank" rel="noopener" href="https://blog.csdn.net/Tester_muller/article/details/131440306?fromshare=blogdetail&sharetype=blogdetail&sharerId=131440306&sharerefer=PC&sharesource=nutangelo&sharefrom=from_link">Ubuntu22 安装</a></p>
+<ul>
+<li><p>卸载旧版本</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">apt-get remove docker docker-engine docker.io containerd runc</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>更新软件包</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo apt update</span><br><span class="line">sudo apt upgrade</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>安装docker依赖</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">apt-get install ca-certificates curl gnupg lsb-release</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>添加Docker官方GPG密钥</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">curl -fsSL http://mirrors.aliyun.com/docker-ce/linux/ubuntu/gpg | sudo apt-key add -</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>添加Docker软件源</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo add-apt-repository &quot;deb [arch=amd64] http://mirrors.aliyun.com/docker-ce/linux/ubuntu $(lsb_release -cs) stable&quot;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>安装docker</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">apt-get install docker-ce docker-ce-cli containerd.io</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>配置用户组（可选）</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">sudo usermod -aG docker $USER</span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">应用完之后可以刷新docker组权限或<span class="built_in">logout</span>重登账号刷新权限</span></span><br><span class="line">newgrp docker</span><br><span class="line">logout</span><br></pre></td></tr></table></figure></li>
+</ul>
+<p><strong>换源：</strong></p>
+<ul>
+<li><p>可用源</p>
+<blockquote>
+<p>阿里云：<a target="_blank" rel="noopener" href="https://registry.cn-hangzhou.aliyuncs.com/">https://registry.cn-hangzhou.aliyuncs.com</a><br>腾讯云：<a target="_blank" rel="noopener" href="https://mirrors.tencent.com/docker">https://mirrors.tencent.com/docker</a><br>华为云：<a target="_blank" rel="noopener" href="https://mirror.ccs.tencent.com/dockerhub">https://mirror.ccs.tencent.com/dockerhub</a><br>中国科技大学：<a target="_blank" rel="noopener" href="https://docker.mirrors.ustc.edu.cn/">https://docker.mirrors.ustc.edu.cn/</a><br>豆瓣(Douban)：<a target="_blank" rel="noopener" href="https://dockerhub.douban.com/">https://dockerhub.douban.com/</a></p>
+</blockquote>
+</li>
+<li><p>换源</p>
+<p>打开或创建<code>daemon.json</code>文件。这个文件通常位于<code>/etc/docker/</code>目录下，如果没有创建<code>daemon.json</code>文件就自己创建一下。编辑<code>daemon.json</code>：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo vim /etc/docker/daemon.json</span><br></pre></td></tr></table></figure>
+
+<p>在 <code>daemon.json</code> 文件中添加以下内容，将 <code>MIRRORS</code> 替换为你选择的镜像源：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  &quot;registry-mirrors&quot;: [&quot;https://MIRRORS.mirror.com&quot;]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>例如：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  &quot;registry-mirrors&quot;: [</span><br><span class="line">    &quot;https://hub-mirror.c.163.com&quot;,</span><br><span class="line">    &quot;https://mirror.baidubce.com&quot;</span><br><span class="line">  ]</span><br><span class="line">&#125;</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">有用：</span></span><br><span class="line">&#123;</span><br><span class="line">     &quot;max-concurrent-downloads&quot;: 10,</span><br><span class="line">     &quot;max-concurrent-uploads&quot;: 5,</span><br><span class="line">     &quot;default-shm-size&quot;: &quot;1G&quot;,</span><br><span class="line">     &quot;debug&quot;: true,</span><br><span class="line">     &quot;experimental&quot;: false,</span><br><span class="line">     &quot;registry-mirrors&quot;:[</span><br><span class="line">                &quot;https://x9r52uz5.mirror.aliyuncs.com&quot;,</span><br><span class="line">                &quot;https://dockerhub.icu&quot;,</span><br><span class="line">                &quot;https://docker.chenby.cn&quot;,</span><br><span class="line">                &quot;https://docker.1panel.live&quot;,</span><br><span class="line">                &quot;https://docker.awsl9527.cn&quot;,</span><br><span class="line">                &quot;https://docker.anyhub.us.kg&quot;,</span><br><span class="line">                &quot;https://dhub.kubesre.xyz&quot;</span><br><span class="line">        ]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>保存重启</p>
+</li>
+<li><p>其他可能操作：</p>
+<p>编辑 <code>/etc/resolv.conf</code> 文件，添加以下内容：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">nameserver 8.8.8.8</span><br><span class="line">nameserver 8.8.4.4</span><br></pre></td></tr></table></figure>
+
+<p>重启docker</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo docker daemon-reload</span><br><span class="line">sudo systemctl restart docker </span><br></pre></td></tr></table></figure></li>
+</ul>
+<p><strong>安装后尝试运行：</strong></p>
+<ul>
+<li>运行</li>
+</ul>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">systemctl start docker</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>安装工具</li>
+</ul>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">apt-get -y install apt-transport-https ca-certificates curl software-properties-common</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>重启docker</li>
+</ul>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">service docker restart</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>验证是否成功</li>
+</ul>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo docker run hello-world</span><br></pre></td></tr></table></figure>
+
+<h2 id="具体指令参考"><a href="#具体指令参考" class="headerlink" title="具体指令参考"></a>具体指令参考</h2><p>DockerCheatSheet-ByGeekHour.pdf</p>
+<h2 id="常见命令"><a href="#常见命令" class="headerlink" title="常见命令"></a>常见命令</h2><h3 id="镜像管理"><a href="#镜像管理" class="headerlink" title="镜像管理"></a>镜像管理</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">1 下载、上传</span></span><br><span class="line">docker pull [image]</span><br><span class="line">docker push [image]</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">2 保存、导入</span></span><br><span class="line">docker save [image] -o [FILE]</span><br><span class="line">docker load -i [FILE]</span><br><span class="line">docker commit [container] [image] # 从容器创建镜像</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">3 删除</span></span><br><span class="line">docker image rm [image]</span><br></pre></td></tr></table></figure>
+
+<h3 id="容器管理"><a href="#容器管理" class="headerlink" title="容器管理"></a>容器管理</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">创建、开始、停止、重启、查看、删除</span></span><br><span class="line">docker create [image]</span><br><span class="line">docker start [container]</span><br><span class="line">docker stop [container]</span><br><span class="line">docker restart [container]</span><br><span class="line">docker container ls # -a 表示查看所有容器，包括未运行的</span><br><span class="line">docker container rm [container]</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">bash交互进入容器</span></span><br><span class="line">docker exec -it [container] bash</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">容器创建并运行</span></span><br><span class="line">docker run</span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">参数：</span></span><br><span class="line">--name [image] [container]</span><br><span class="line">-d # 后台运行</span><br><span class="line">-p [hostPort]:[containerPort] # 端口映射</span><br><span class="line">-e [key=value] # 环境变量</span><br><span class="line">-w [PATH] # 指定工作目录</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">范例</span></span><br><span class="line">docker run -it -p 3316:3306 -v /data:/data -d --name mysql mysql:latest</span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">创建⼀个mysql容器，后台模式启动，主机3316端⼝，映射到容器3306端⼝，主机/data⽬录映射到容器/data⽬录</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="数据卷"><a href="#数据卷" class="headerlink" title="数据卷"></a>数据卷</h3><table>
+<thead>
+<tr>
+<th align="left"><strong>命令</strong></th>
+<th align="left"><strong>说明</strong></th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">docker volume create</td>
+<td align="left">创建数据卷</td>
+</tr>
+<tr>
+<td align="left">docker volume ls</td>
+<td align="left">查看所有数据卷</td>
+</tr>
+<tr>
+<td align="left">docker volume rm</td>
+<td align="left">删除指定数据卷</td>
+</tr>
+<tr>
+<td align="left">docker volume inspect</td>
+<td align="left">查看某个数据卷的详情</td>
+</tr>
+<tr>
+<td align="left">docker volume prune</td>
+<td align="left">清除数据卷</td>
+</tr>
+</tbody></table>
+<p>注意：容器与数据卷的挂载要在创建容器时配置，对于创建好的容器，是不能设置数据卷的。而且<strong>创建容器的过程中，数据卷会自动创建</strong>。</p>
+<p><code>/var/lib/docker/volumes</code>这个目录就是默认的存放所有容器数据卷的目录，其下再根据数据卷名称创建新目录，格式为<code>/数据卷名/_data</code>。</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">范例</span></span><br><span class="line">docker run -d -v [VOLUME_NAME]:[CONTAINER_PATH] [IMAGE]</span><br><span class="line">docker run -d --name nginx -p 80:80 -v html:/usr/share/nginx/html nginx</span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">4.查看/var/lib/docker/volumes/html/_data目录</span></span><br><span class="line">ll /var/lib/docker/volumes/html/_data</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">直接挂载特定目标（导致强耦合）</span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">挂载本地目录</span></span><br><span class="line">-v 本地目录:容器内目录</span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">挂载本地文件</span></span><br><span class="line">-v 本地文件:容器内文件</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">从.mount中可以查看容器的挂载状况；从.config/volume中可以查看简略挂载状况</span></span><br><span class="line">docker inspect [container]</span><br></pre></td></tr></table></figure>
+
+<h3 id="网络管理"><a href="#网络管理" class="headerlink" title="网络管理"></a>网络管理</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">创建容器时就加入某个网络</span></span><br><span class="line">docker run -d --name mysql --network [netname] mysql</span><br></pre></td></tr></table></figure>
+
+<table>
+<thead>
+<tr>
+<th align="left"><strong>命令</strong></th>
+<th align="left"><strong>说明</strong></th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">docker network create [netname]</td>
+<td align="left">创建一个网络</td>
+</tr>
+<tr>
+<td align="left">docker network ls</td>
+<td align="left">查看所有网络</td>
+</tr>
+<tr>
+<td align="left">docker network rm</td>
+<td align="left">删除指定网络</td>
+</tr>
+<tr>
+<td align="left">docker network prune</td>
+<td align="left">清除未使用的网络</td>
+</tr>
+<tr>
+<td align="left">docker network connect</td>
+<td align="left">使指定容器连接加入某网络</td>
+</tr>
+<tr>
+<td align="left">docker network disconnect</td>
+<td align="left">使指定容器连接离开某网络</td>
+</tr>
+<tr>
+<td align="left">docker network inspect</td>
+<td align="left">查看网络详细信息</td>
+</tr>
+</tbody></table>
+<h2 id="Docker-File"><a href="#Docker-File" class="headerlink" title="Docker File"></a>Docker File</h2><p><code>dockerfile</code>是用来指定镜像结构的，镜像结构是一种层结构，下层往往是上层的依赖或环境。一般的镜像结构可以分为：系统层、环境变量层、编程环境层、应用层。</p>
+<table>
+<thead>
+<tr>
+<th align="left"><strong>指令</strong></th>
+<th align="left"><strong>说明</strong></th>
+<th align="left"><strong>示例</strong></th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left"><strong>FROM</strong></td>
+<td align="left">指定基础镜像</td>
+<td align="left"><code>FROM centos:6</code></td>
+</tr>
+<tr>
+<td align="left"><strong>ENV</strong></td>
+<td align="left">设置环境变量，可在后面指令使用</td>
+<td align="left"><code>ENV key value</code></td>
+</tr>
+<tr>
+<td align="left"><strong>COPY</strong></td>
+<td align="left">拷贝本地文件到镜像的指定目录</td>
+<td align="left"><code>COPY ./xx.jar /tmp/app.jar</code></td>
+</tr>
+<tr>
+<td align="left"><strong>RUN</strong></td>
+<td align="left">执行Linux的shell命令，一般是安装过程的命令</td>
+<td align="left"><code>RUN yum install gcc</code></td>
+</tr>
+<tr>
+<td align="left"><strong>EXPOSE</strong></td>
+<td align="left">指定容器运行时监听的端口，是给镜像使用者看的</td>
+<td align="left">EXPOSE 8080</td>
+</tr>
+<tr>
+<td align="left"><strong>ENTRYPOINT</strong></td>
+<td align="left">镜像中应用的启动命令，容器运行时调用</td>
+<td align="left">ENTRYPOINT java -jar xx.jar</td>
+</tr>
+</tbody></table>
+<figure class="highlight dockerfile"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 指定基础镜像</span></span><br><span class="line"><span class="keyword">FROM</span> ubuntu:<span class="number">16.04</span></span><br><span class="line"><span class="comment"># 配置环境变量，JDK的安装目录、容器内时区</span></span><br><span class="line"><span class="keyword">ENV</span> JAVA_DIR=/usr/local</span><br><span class="line"><span class="keyword">ENV</span> TZ=Asia/Shanghai</span><br><span class="line"><span class="comment"># 拷贝jdk和java项目的包</span></span><br><span class="line"><span class="keyword">COPY</span><span class="language-bash"> ./jdk8.tar.gz <span class="variable">$JAVA_DIR</span>/</span></span><br><span class="line"><span class="keyword">COPY</span><span class="language-bash"> ./docker-demo.jar /tmp/app.jar</span></span><br><span class="line"><span class="comment"># 设定时区</span></span><br><span class="line"><span class="keyword">RUN</span><span class="language-bash"> <span class="built_in">ln</span> -snf /usr/share/zoneinfo/<span class="variable">$TZ</span> /etc/localtime &amp;&amp; <span class="built_in">echo</span> <span class="variable">$TZ</span> &gt; /etc/timezone</span></span><br><span class="line"><span class="comment"># 安装JDK</span></span><br><span class="line"><span class="keyword">RUN</span><span class="language-bash"> <span class="built_in">cd</span> <span class="variable">$JAVA_DIR</span> \</span></span><br><span class="line"><span class="language-bash"> &amp;&amp; tar -xf ./jdk8.tar.gz \</span></span><br><span class="line"><span class="language-bash"> &amp;&amp; <span class="built_in">mv</span> ./jdk1.8.0_144 ./java8</span></span><br><span class="line"><span class="comment"># 配置环境变量</span></span><br><span class="line"><span class="keyword">ENV</span> JAVA_HOME=$JAVA_DIR/java8</span><br><span class="line"><span class="keyword">ENV</span> PATH=$PATH:$JAVA_HOME/bin</span><br><span class="line"><span class="comment"># 指定项目监听的端口</span></span><br><span class="line"><span class="keyword">EXPOSE</span> <span class="number">8080</span></span><br><span class="line"><span class="comment"># 入口，java项目的启动命令</span></span><br><span class="line"><span class="keyword">ENTRYPOINT</span><span class="language-bash"> [<span class="string">&quot;java&quot;</span>, <span class="string">&quot;-jar&quot;</span>, <span class="string">&quot;/app.jar&quot;</span>]</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>在已经打包的镜像进一步制作镜像：</strong></p>
+<figure class="highlight dockerfile"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 基础镜像</span></span><br><span class="line"><span class="keyword">FROM</span> openjdk:<span class="number">11.0</span>-jre-buster</span><br><span class="line"><span class="comment"># 设定时区</span></span><br><span class="line"><span class="keyword">ENV</span> TZ=Asia/Shanghai</span><br><span class="line"><span class="keyword">RUN</span><span class="language-bash"> <span class="built_in">ln</span> -snf /usr/share/zoneinfo/<span class="variable">$TZ</span> /etc/localtime &amp;&amp; <span class="built_in">echo</span> <span class="variable">$TZ</span> &gt; /etc/timezone</span></span><br><span class="line"><span class="comment"># 拷贝jar包</span></span><br><span class="line"><span class="keyword">COPY</span><span class="language-bash"> docker-demo.jar /app.jar</span></span><br><span class="line"><span class="comment"># 入口</span></span><br><span class="line"><span class="keyword">ENTRYPOINT</span><span class="language-bash"> [<span class="string">&quot;java&quot;</span>, <span class="string">&quot;-jar&quot;</span>, <span class="string">&quot;/app.jar&quot;</span>]</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>构建镜像：</strong></p>
+<figure class="highlight dockerfile"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 直接指定Dockerfile目录</span></span><br><span class="line">docker build -t docker-demo:<span class="number">1.0</span> /root/demo</span><br></pre></td></tr></table></figure>
+
+
+      </div>
+      
+        <div class="prev-or-next">
+          <div class="post-foot-next">
+            
+              <a href="/2025/03/14/message/" target="_self">
+                <i class="iconfont icon-chevronleft"></i>
+                <span>Prev</span>
+              </a>
+            
+          </div>
+          <div class="post-attach">
+            <span class="post-pubtime">
+              <i class="iconfont icon-updatetime mr-10" title="Update time"></i>
+              2025-03-14 22:25:51
+            </span>
+            
+          </div>
+          <div class="post-foot-prev">
+            
+          </div>
+        </div>
+      
+    </div>
+    
+  <div id="btn-catalog" class="btn-catalog">
+    <i class="iconfont icon-catalog"></i>
+  </div>
+  <div class="post-catalog hidden" id="catalog">
+    <div class="title">Contents</div>
+    <div class="catalog-content">
+      
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Docker%E5%AD%A6%E4%B9%A0"><span class="toc-text">Docker学习</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Ubuntu22-%E5%AE%89%E8%A3%85"><span class="toc-text">Ubuntu22 安装</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%85%B7%E4%BD%93%E6%8C%87%E4%BB%A4%E5%8F%82%E8%80%83"><span class="toc-text">具体指令参考</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B8%B8%E8%A7%81%E5%91%BD%E4%BB%A4"><span class="toc-text">常见命令</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%95%9C%E5%83%8F%E7%AE%A1%E7%90%86"><span class="toc-text">镜像管理</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%B9%E5%99%A8%E7%AE%A1%E7%90%86"><span class="toc-text">容器管理</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E5%8D%B7"><span class="toc-text">数据卷</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BD%91%E7%BB%9C%E7%AE%A1%E7%90%86"><span class="toc-text">网络管理</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Docker-File"><span class="toc-text">Docker File</span></a></li></ol></li></ol>
+      
+    </div>
+  </div>
+
+  
+<script src="/js/catalog.js"></script>
+
+
+
+
+    
+      <div class="comments-container">
+        
+
+
+
+
+  
+    <script async type="text/javascript" src="/plugins/valine.min.js" onload="loadValineSuc(this)"></script>
+  
+
+  <div id="vcomments"></div>
+
+  <script>
+    function loadValineSuc() {
+      new Valine({
+        el: '#vcomments',
+        appId: 'DHcSyrKf5qmuJOnduvfpBwkc-gzGzoHsz',
+        appKey: 'FbDDmYe8RBaAt2OvxdtGPh27',
+        placeholder: 'Welcome to comment!',
+        avatar: 'retro',
+        lang: 'en'
+      })
+    }
+  </script>
+
+    <style>
+      .comments-container .v .vempty {
+        display: none!important;
+      }
+    </style>
+
+
+
+
+      </div>
+    
+  </div>
+
+
+        
+<div class="footer">
+  <div class="social">
+    <ul>
+      
+        <li>
+          
+              <a title="github" target="_blank" rel="noopener" href="https://github.com/zchengsite/hexo-theme-oranges">
+                <i class="iconfont icon-github"></i>
+              </a>
+              
+        </li>
+        
+    </ul>
+  </div>
+  
+    
+    <div class="footer-more">
+      
+        <a target="_blank" rel="noopener" href="https://github.com/zchengsite/hexo-theme-oranges">Copyright © 2025 Oranges</a>
+        
+    </div>
+  
+    
+    <div class="footer-more">
+      
+        <a target="_blank" rel="noopener" href="https://github.com/zchengsite/hexo-theme-oranges">Theme by Oranges | Powered by Hexo</a>
+        
+    </div>
+  
+  
+</div>
+
+      </div>
+
+      <div class="tools-bar">
+        <div class="back-to-top tools-bar-item hidden">
+  <a href="javascript: void(0)">
+    <i class="iconfont icon-chevronup"></i>
+  </a>
+</div>
+
+
+<script src="/js/backtotop.js"></script>
+
+
+
+        
+  <div class="search-icon tools-bar-item" id="search-icon">
+    <a href="javascript: void(0)">
+      <i class="iconfont icon-search"></i>
+    </a>
+  </div>
+
+  <div class="search-overlay hidden">
+    <div class="search-content" tabindex="0">
+      <div class="search-title">
+        <span class="search-icon-input">
+          <a href="javascript: void(0)">
+            <i class="iconfont icon-search"></i>
+          </a>
+        </span>
+        
+          <input type="text" class="search-input" id="search-input" placeholder="Search...">
+        
+        <span class="search-close-icon" id="search-close-icon">
+          <a href="javascript: void(0)">
+            <i class="iconfont icon-close"></i>
+          </a>
+        </span>
+      </div>
+      <div class="search-result" id="search-result"></div>
+    </div>
+  </div>
+
+  <script type="text/javascript">
+    var inputArea = document.querySelector("#search-input")
+    var searchOverlayArea = document.querySelector(".search-overlay")
+
+    inputArea.onclick = function() {
+      getSearchFile()
+      this.onclick = null
+    }
+
+    inputArea.onkeydown = function() {
+      if(event.keyCode == 13)
+        return false
+    }
+
+    function openOrHideSearchContent() {
+      let isHidden = searchOverlayArea.classList.contains('hidden')
+      if (isHidden) {
+        searchOverlayArea.classList.remove('hidden')
+        document.body.classList.add('hidden')
+        // inputArea.focus()
+      } else {
+        searchOverlayArea.classList.add('hidden')
+        document.body.classList.remove('hidden')
+      }
+    }
+
+    function blurSearchContent(e) {
+      if (e.target === searchOverlayArea) {
+        openOrHideSearchContent()
+      }
+    }
+
+    document.querySelector("#search-icon").addEventListener("click", openOrHideSearchContent, false)
+    document.querySelector("#search-close-icon").addEventListener("click", openOrHideSearchContent, false)
+    searchOverlayArea.addEventListener("click", blurSearchContent, false)
+
+    var searchFunc = function (path, search_id, content_id) {
+      'use strict';
+      var $input = document.getElementById(search_id);
+      var $resultContent = document.getElementById(content_id);
+      $resultContent.innerHTML = "<ul><span class='local-search-empty'>First search, index file loading, please wait...<span></ul>";
+      $.ajax({
+        // 0x01. load xml file
+        url: path,
+        dataType: "xml",
+        success: function (xmlResponse) {
+          // 0x02. parse xml file
+          var datas = $("entry", xmlResponse).map(function () {
+            return {
+              title: $("title", this).text(),
+              content: $("content", this).text(),
+              url: $("url", this).text()
+            };
+          }).get();
+          $resultContent.innerHTML = "";
+
+          $input.addEventListener('input', function () {
+            // 0x03. parse query to keywords list
+            var str = '<ul class=\"search-result-list\">';
+            var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+            $resultContent.innerHTML = "";
+            if (this.value.trim().length <= 0) {
+              return;
+            }
+            // 0x04. perform local searching
+            datas.forEach(function (data) {
+              var isMatch = true;
+              var content_index = [];
+              if (!data.title || data.title.trim() === '') {
+                data.title = "Untitled";
+              }
+              var orig_data_title = data.title.trim();
+              var data_title = orig_data_title.toLowerCase();
+              var orig_data_content = data.content.trim().replace(/<[^>]+>/g, "");
+              var data_content = orig_data_content.toLowerCase();
+              var data_url = data.url;
+              var index_title = -1;
+              var index_content = -1;
+              var first_occur = -1;
+              // only match artiles with not empty contents
+              if (data_content !== '') {
+                keywords.forEach(function (keyword, i) {
+                  index_title = data_title.indexOf(keyword);
+                  index_content = data_content.indexOf(keyword);
+
+                  if (index_title < 0 && index_content < 0) {
+                    isMatch = false;
+                  } else {
+                    if (index_content < 0) {
+                      index_content = 0;
+                    }
+                    if (i == 0) {
+                      first_occur = index_content;
+                    }
+                    // content_index.push({index_content:index_content, keyword_len:keyword_len});
+                  }
+                });
+              } else {
+                isMatch = false;
+              }
+              // 0x05. show search results
+              if (isMatch) {
+                str += "<li><a href='" + data_url + "' class='search-result-title'>" + orig_data_title + "</a>";
+                var content = orig_data_content;
+                if (first_occur >= 0) {
+                  // cut out 100 characters
+                  var start = first_occur - 20;
+                  var end = first_occur + 80;
+
+                  if (start < 0) {
+                    start = 0;
+                  }
+
+                  if (start == 0) {
+                    end = 100;
+                  }
+
+                  if (end > content.length) {
+                    end = content.length;
+                  }
+
+                  var match_content = content.substr(start, end);
+
+                  // highlight all keywords
+                  keywords.forEach(function (keyword) {
+                    var regS = new RegExp(keyword, "gi");
+                    match_content = match_content.replace(regS, "<span class=\"search-keyword\">" + keyword + "</span>");
+                  });
+
+                  str += "<p class=\"search-result-abstract\">" + match_content + "...</p>"
+                }
+                str += "</li>";
+              }
+            });
+            str += "</ul>";
+            if (str.indexOf('<li>') === -1) {
+              return $resultContent.innerHTML = "<ul><span class='local-search-empty'>No result<span></ul>";
+            }
+            $resultContent.innerHTML = str;
+          });
+        },
+        error: function(xhr, status, error) {
+          $resultContent.innerHTML = ""
+          if (xhr.status === 404) {
+            $resultContent.innerHTML = "<ul><span class='local-search-empty'>The search.xml file was not found, please refer to：<a href='https://github.com/zchengsite/hexo-theme-oranges#configuration' target='_black'>configuration</a><span></ul>";
+          } else {
+            $resultContent.innerHTML = "<ul><span class='local-search-empty'>The request failed, Try to refresh the page or try again later.<span></ul>";
+          }
+        }
+      });
+      $(document).on('click', '#search-close-icon', function() {
+        $('#search-input').val('');
+        $('#search-result').html('');
+      });
+    }
+
+    var getSearchFile = function() {
+        var path = "/search.xml";
+        searchFunc(path, 'search-input', 'search-result');
+    }
+  </script>
+
+
+
+
+        
+  <div class="tools-bar-item theme-icon" id="switch-color-scheme">
+    <a href="javascript: void(0)">
+      <i id="theme-icon" class="iconfont icon-moon"></i>
+    </a>
+  </div>
+
+  
+<script src="/js/colorscheme.js"></script>
+
+
+
+
+
+        
+  
+    <div class="share-icon tools-bar-item">
+      <a href="javascript: void(0)" id="share-icon">
+        <i class="iconfont iconshare"></i>
+      </a>
+      <div class="share-content hidden">
+        
+          <a class="share-item" href="https://twitter.com/intent/tweet?text=' + docker + '&url=' + http%3A%2F%2Fexample.com%2F2025%2F03%2F14%2Fdocker%2F + '" target="_blank" title="Twitter">
+            <i class="iconfont icon-twitter"></i>
+          </a>
+        
+        
+          <a class="share-item" href="https://www.facebook.com/sharer.php?u=http://example.com/2025/03/14/docker/" target="_blank" title="Facebook">
+            <i class="iconfont icon-facebooksquare"></i>
+          </a>
+        
+      </div>
+    </div>
+  
+  
+<script src="/js/shares.js"></script>
+
+
+
+      </div>
+    </div>
+  </body>
+</html>
