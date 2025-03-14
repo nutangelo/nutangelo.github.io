@@ -13,7 +13,7 @@
   
   <title>
     
-      docker 
+      docker学习 
       
       
       |
@@ -149,11 +149,11 @@
   <!-- 文章内容页 url形式：https://yoursite/文章标题/ -->
   <div class="container post-details" id="post-details">
     <div class="post-content">
-      <div class="post-title">docker</div>
+      <div class="post-title">docker学习</div>
       <div class="post-attach">
         <span class="post-pubtime">
           <i class="iconfont icon-updatetime mr-10" title="Update time"></i>
-          2025-03-14 22:25:51
+          2025-03-14 22:34:12
         </span>
         
       </div>
@@ -230,7 +230,6 @@
 </ul>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo docker run hello-world</span><br></pre></td></tr></table></figure>
 
-<h2 id="具体指令参考"><a href="#具体指令参考" class="headerlink" title="具体指令参考"></a>具体指令参考</h2><p>DockerCheatSheet-ByGeekHour.pdf</p>
 <h2 id="常见命令"><a href="#常见命令" class="headerlink" title="常见命令"></a>常见命令</h2><h3 id="镜像管理"><a href="#镜像管理" class="headerlink" title="镜像管理"></a>镜像管理</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">1 下载、上传</span></span><br><span class="line">docker pull [image]</span><br><span class="line">docker push [image]</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">2 保存、导入</span></span><br><span class="line">docker save [image] -o [FILE]</span><br><span class="line">docker load -i [FILE]</span><br><span class="line">docker commit [container] [image] # 从容器创建镜像</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">3 删除</span></span><br><span class="line">docker image rm [image]</span><br></pre></td></tr></table></figure>
 
 <h3 id="容器管理"><a href="#容器管理" class="headerlink" title="容器管理"></a>容器管理</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">创建、开始、停止、重启、查看、删除</span></span><br><span class="line">docker create [image]</span><br><span class="line">docker start [container]</span><br><span class="line">docker stop [container]</span><br><span class="line">docker restart [container]</span><br><span class="line">docker container ls # -a 表示查看所有容器，包括未运行的</span><br><span class="line">docker container rm [container]</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">bash交互进入容器</span></span><br><span class="line">docker exec -it [container] bash</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">容器创建并运行</span></span><br><span class="line">docker run</span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">参数：</span></span><br><span class="line">--name [image] [container]</span><br><span class="line">-d # 后台运行</span><br><span class="line">-p [hostPort]:[containerPort] # 端口映射</span><br><span class="line">-e [key=value] # 环境变量</span><br><span class="line">-w [PATH] # 指定工作目录</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">范例</span></span><br><span class="line">docker run -it -p 3316:3306 -v /data:/data -d --name mysql mysql:latest</span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">创建⼀个mysql容器，后台模式启动，主机3316端⼝，映射到容器3306端⼝，主机/data⽬录映射到容器/data⽬录</span></span><br></pre></td></tr></table></figure>
@@ -368,7 +367,7 @@
           <div class="post-attach">
             <span class="post-pubtime">
               <i class="iconfont icon-updatetime mr-10" title="Update time"></i>
-              2025-03-14 22:25:51
+              2025-03-14 22:34:12
             </span>
             
           </div>
@@ -386,7 +385,7 @@
     <div class="title">Contents</div>
     <div class="catalog-content">
       
-        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Docker%E5%AD%A6%E4%B9%A0"><span class="toc-text">Docker学习</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Ubuntu22-%E5%AE%89%E8%A3%85"><span class="toc-text">Ubuntu22 安装</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%85%B7%E4%BD%93%E6%8C%87%E4%BB%A4%E5%8F%82%E8%80%83"><span class="toc-text">具体指令参考</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B8%B8%E8%A7%81%E5%91%BD%E4%BB%A4"><span class="toc-text">常见命令</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%95%9C%E5%83%8F%E7%AE%A1%E7%90%86"><span class="toc-text">镜像管理</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%B9%E5%99%A8%E7%AE%A1%E7%90%86"><span class="toc-text">容器管理</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E5%8D%B7"><span class="toc-text">数据卷</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BD%91%E7%BB%9C%E7%AE%A1%E7%90%86"><span class="toc-text">网络管理</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Docker-File"><span class="toc-text">Docker File</span></a></li></ol></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Docker%E5%AD%A6%E4%B9%A0"><span class="toc-text">Docker学习</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Ubuntu22-%E5%AE%89%E8%A3%85"><span class="toc-text">Ubuntu22 安装</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B8%B8%E8%A7%81%E5%91%BD%E4%BB%A4"><span class="toc-text">常见命令</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%95%9C%E5%83%8F%E7%AE%A1%E7%90%86"><span class="toc-text">镜像管理</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%B9%E5%99%A8%E7%AE%A1%E7%90%86"><span class="toc-text">容器管理</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E5%8D%B7"><span class="toc-text">数据卷</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BD%91%E7%BB%9C%E7%AE%A1%E7%90%86"><span class="toc-text">网络管理</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Docker-File"><span class="toc-text">Docker File</span></a></li></ol></li></ol>
       
     </div>
   </div>
@@ -699,7 +698,7 @@
       </a>
       <div class="share-content hidden">
         
-          <a class="share-item" href="https://twitter.com/intent/tweet?text=' + docker + '&url=' + http%3A%2F%2Fexample.com%2F2025%2F03%2F14%2Fdocker%2F + '" target="_blank" title="Twitter">
+          <a class="share-item" href="https://twitter.com/intent/tweet?text=' + docker%E5%AD%A6%E4%B9%A0 + '&url=' + http%3A%2F%2Fexample.com%2F2025%2F03%2F14%2Fdocker%2F + '" target="_blank" title="Twitter">
             <i class="iconfont icon-twitter"></i>
           </a>
         
